@@ -2,8 +2,8 @@ import React from "react";
 
 function Work() {
 
-    var images = [
-        { url: "./images/react.jpg", top: "50%", left: "50%", isActive: true },
+    let images = [
+        { url: "./images/react.jpg", top: "50%", left: "50%", isActive: false },
         { url: "./images/mongo.png", top: "56%", left: "44%", isActive: false },
         { url: "./images/nodejs.jpg", top: "45%", left: "56%", isActive: false },
         { url: "./images/expressjs.png", top: "60%", left: "53%", isActive: false },
@@ -11,7 +11,7 @@ function Work() {
         { url: "./images/frontend.jpg", top: "60%", left: "55%", isActive: false }
     ]
     return (
-        <div className="w-full">
+        <div className="w-full flex justify-center">
             <div className="relative max-w-screen-xl mx-auto">
                 <h1 className="text-[30vw] leading-none font-medium tracking-tight select-none text-center">Work</h1>
 
