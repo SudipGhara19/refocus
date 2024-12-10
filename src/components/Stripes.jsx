@@ -16,7 +16,7 @@ function Stripes() {
     return (
         <div className="flex flex-row justify-evenly my-20">
             {data.map((elem, index) => (
-                <Stripe val={elem} />
+                <Stripe key={index} val={elem} />
             ))}
         </div>
     )
