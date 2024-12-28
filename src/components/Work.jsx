@@ -1,15 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "motion/react"
 
 function Work() {
 
-    let images = [
+
+    const { scrollYProgress } = useScroll()
+    const [images, setImages] = useState([
         { url: "./images/react.jpg", top: "50%", left: "50%", isActive: false },
         { url: "./images/mongo.png", top: "56%", left: "44%", isActive: false },
         { url: "./images/nodejs.jpg", top: "45%", left: "56%", isActive: false },
         { url: "./images/expressjs.png", top: "60%", left: "53%", isActive: false },
         { url: "./images/uiux.jpg", top: "43%", left: "40%", isActive: false },
         { url: "./images/frontend.jpg", top: "60%", left: "55%", isActive: false }
-    ]
+    ])
+
+    scrollYProgress.on('change', (data) => {
+
+        function showImages(arr) {
+            setImages((prev) =>
+                prev.map((item, index) =>
+                    arr.indexOf(index) === -1
+                        ? { ...item, isActive: false }
+                        : { ...item, isActive: true }
+                )
+            )
+        }
+
+        switch (Math.floor(data * 100)) {
+            case 0:
+                showImages([])
+                break;
+            case 1:
+                showImages([0])
+                break;
+            case 2:
+                showImages([0, 1])
+                break;
+            case 3:
+                showImages([0, 1, 2])
+                break;
+            case 4:
+                showImages([0, 1, 2, 3])
+                break;
+            case 5:
+                showImages([0, 1, 2, 3, 4])
+                break;
+            case 6:
+                showImages([0, 1, 2, 3, 4, 5])
+                break;
+        }
+    })
+
+    //-------------- function to show images on scroll -------------
+    const showHideImages = () => {
+
+    }
+
     return (
         <div className="w-full flex justify-center">
             <div className="relative max-w-screen-xl mx-auto">
