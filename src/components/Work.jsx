@@ -6,12 +6,12 @@ function Work() {
 
     const { scrollYProgress } = useScroll()
     const [images, setImages] = useState([
-        { url: "./images/react.jpg", top: "50%", left: "50%", isActive: false },
-        { url: "./images/mongo.png", top: "56%", left: "44%", isActive: false },
-        { url: "./images/nodejs.jpg", top: "45%", left: "56%", isActive: false },
-        { url: "./images/expressjs.png", top: "60%", left: "53%", isActive: false },
-        { url: "./images/uiux.jpg", top: "43%", left: "40%", isActive: false },
-        { url: "./images/frontend.jpg", top: "60%", left: "55%", isActive: false }
+        { url: "./images/Arqitel.webp", top: "50%", left: "50%", isActive: false },
+        { url: "./images/Layout-Land.webp", top: "56%", left: "44%", isActive: false },
+        { url: "./images/Cula.webp", top: "45%", left: "56%", isActive: false },
+        { url: "./images/Umault.webp", top: "60%", left: "53%", isActive: false },
+        { url: "./images/Singularity.webp", top: "43%", left: "40%", isActive: false },
+        { url: "./images/Botify.webp", top: "60%", left: "55%", isActive: false }
     ])
 
     scrollYProgress.on('change', (data) => {
